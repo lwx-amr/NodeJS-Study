@@ -1,3 +1,3 @@
 # Node.js Study
 
-This Repository is to store my Node.js studying journey 
+This repository is to store my Node.js studying journey 
