@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-study",
+  "version": "1.0.0",
+  "description": "Studying nodejs from thenetninja channel",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://githun.com/lwx-amr/NodeJS-Study"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "study"
+  ],
+  "author": "Amr Hussien",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  }
+}

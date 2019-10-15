@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Contact page</title>
+    <link rel="stylesheet" href="/assets/master.css" type="text/css">
+    <style>
+      body{
+        background: rgb(6, 190, 79);
+      }
+      .form{
+        width: 400px;
+        margin: 50px auto 0;
+      }
+      input{
+        width: 100%;
+        margin: 10px 0 20px;
+        padding: 2px 10px;
+      }
+      input[type='submit']{
+        width: auto;
+        padding: 4px 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <% include partial/nav.ejs%>
+    <h1>Weclome to Contact Us Page</h1>
+    <p>Thanks for reaching out!</p>
+    <p><%= data.who %> from <%= data.department %> </p>
+    <p>With the email address: <%= data.email %></p>
+  </body>
+</html>

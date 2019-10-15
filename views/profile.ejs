@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title><%= person%> Profile Page</title>
+    <link rel="stylesheet" href="/assets/master.css" type="text/css">
+    <style>
+      body{
+        background: rgb(194, 46, 46);
+      }
+    </style>
+  </head>
+  <body>
+    <% include partial/nav.ejs%>
+    <h1>Weclome to the awesome profile of <%= person%></h1>
+    <p>There is not such better profile than this anywhere else!</p>
+    <p><strong>Age: </strong> <%= data.age%></p>
+    <p><strong>ID: </strong> <%= data.id%></p>
+    <p><strong>Job: </strong> <%= data.job%></p>
+    <h2>Hoppies</h2>
+    <ul>
+      <% data.hoppies.forEach(function(item){%>
+        <li><%= item %></li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
