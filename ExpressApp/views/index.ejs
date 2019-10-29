@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+
+    <%include templates/navbar.ejs%>
+
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <p>Our main words is <%= words %></p>
+    <br>
+    <br>
+    <h2><%=videodata.categoryName%></h2>
+    <h5>Categories:</h5>
+    <% videodata.categories.forEach(function(item){ %>
+      <ul>
+        <li>Name: <%= item.categoryName%> </li>
+        <li>ID:   <%= item.categoryID%> </li>
+      </ul>
+    <% }); %>
+  </body>
+</html>
