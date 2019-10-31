@@ -30,6 +30,13 @@ app.get('/messages', (req, res, err) => {
     });
 });
 
+app.get('/messages/:user',(req, res, err)=>{
+    var user =  req.params.user;
+    DbMessage.find({name: user},(err, messages)=>{
+        res.send(messages); 
+    });
+})
+
 // Post Method
 app.post('/messages', async (req, res, err) => {
 
