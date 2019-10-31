@@ -31,43 +31,35 @@ app.get('/messages', (req, res, err) => {
 });
 
 // Post Method
-app.post('/messages', (req, res, err) => {
-    var message = new DbMessage(req.body);
+app.post('/messages', async (req, res, err) => {
 
-    // This is called callback hell or nested callback and it isn't clean code
-   /* message.save((err) => {
-         if(err)
-            res.sendStatus(500);
-        DbMessage.findOne({message: 'badword'},(err, censored) => {
-            if(censored){
-                console.log(censored);
-                DbMessage.deleteOne({_id: censored.id}, (err) => {
-                    console.log('Removed censored, Error: ', err);
-                })
-            }
-        });
-        io.emit('message',req.body);
-        res.sendStatus(200);       
-    }); */
+    try{
+        var message = new DbMessage(req.body);
 
-    // Same code but using promises
-    message.save()
-    .then(()=>{
+        // Same code but using promises
+        var savedMessage = await message.save();
+        
         console.log('Saved!!');
-        return DbMessage.findOne({message: 'badword'});
-    })
-    .then( censored =>{
+        
+        var censored = await DbMessage.findOne({message: 'badword'});
+    
         if(censored){
-            console.log(censored);
-            return DbMessage.remove({_id: censored.id});
+            await DbMessage.remove({_id: censored.id});
+        }else{
+            io.emit('message',req.body);
         }
-        io.emit('message',req.body);
-        res.sendStatus(200);   
-    })
-    .catch((err)=>{
+        res.sendStatus(200);
+    } catch(err){
         res.sendStatus(500);
         return console.error(err);
-    });
+    } finally{
+        // Will get executed after try or catch
+        //Examples
+        // logger.log('message post called')
+        // connecttion.close();
+        console.log('message post called')
+    }
+
 });
 
 // Socket connection event 
