@@ -1,0 +1,1 @@
+module.exports.myText = "This is first module";
