@@ -1,0 +1,28 @@
+const questions = [
+    "What is your name?",
+    "What would you rather be doing?",
+    "What is your your favourite programming language?"
+]
+
+const ask = (i=0) =>{
+    process.stdout.write(`\n\n\n ${questions[i]}`);
+    process.stdout.write(` > `);    
+};
+ask();
+
+const answers = [];
+process.stdin.on('data', (data) =>{
+    answers.push(data.toString().trim());
+    if(answers.length < questions.length)
+        ask(answers.length);
+    else
+        process.exit();
+});
+
+process.on('exit', () => {
+    const [name,hoppy,lang] = answers;
+    console.log(`
+        Thanks for your answers.
+        Go ${hoppy} ${name} you can write ${lang} code later!!
+    `);
+})
