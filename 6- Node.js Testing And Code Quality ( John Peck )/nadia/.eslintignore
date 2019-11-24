@@ -1,0 +1,6 @@
+#Ignore contrib file in project directory
+public/contrib/*
+
+coverage/*
+
+

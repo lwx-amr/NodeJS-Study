@@ -1,0 +1,44 @@
+{
+  "name": "nadia",
+  "version": "1.0.0",
+  "description": "Nadia's Garden Reservations",
+  "main": "bin/www",
+  "repository": "git@github.com:fluxsauce/nadia.git",
+  "author": "Jon Peck <jpeck@fluxsauce.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "coverage": "cross-env DEBUG=nadia:* nyc --reporter=html --reporter=text mocha",
+    "debug": "cross-env DEBUG=nadia:* nodemon",
+    "eslint": "eslint",
+    "start": "node bin/www",
+    "test": "cross-env DEBUG=nadia:* mocha"
+  },
+  "dependencies": {
+    "basic-auth": "^1.1.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "^4.17.1",
+    "joi": "^10.6.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "morgan": "^1.9.1",
+    "node-env": "^0.1.6",
+    "pug": "^2.0.0-rc.2",
+    "serve-favicon": "~2.4.2",
+    "sqlite": "^2.8.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "cross-env": "^5.0.1",
+    "eslint": "^6.6.0",
+    "mocha": "^6.2.2",
+    "nodemon": "^1.11.0",
+    "nyc": "^14.1.1",
+    "proxyquire": "^2.1.3",
+    "sinon": "^7.5.0",
+    "sinon-chai": "^3.3.0"
+  }
+}
