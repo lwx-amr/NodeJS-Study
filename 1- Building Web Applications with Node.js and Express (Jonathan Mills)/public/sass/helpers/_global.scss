@@ -1,0 +1,58 @@
+/* ---------------------------------- Start Global ---------------------------*/
+body {
+  font-family: 'Oswald', sans-serif; }
+
+h5,h6{
+  margin: 0;
+}
+h5{
+  font-weight: normal;
+  font-size: 18px;
+}
+h6{
+  font-size: 16px;
+}
+ul,li{
+  padding: 0;
+  margin: 0;
+}
+a,
+a:hover,
+a:focus{
+    text-decoration: none;
+}
+p{
+  margin: 0;
+}
+.form-control:focus{
+  outline: none;
+  box-shadow: none;
+}
+/* ---------------------------------- End Global ---------------------------*/
+/* ---------------------------------- Start Framework ---------------------------*/
+/*.container{
+  @include minXl{
+    width: 100%;
+    max-width: 1260px;
+    padding: 0;
+  };
+}
+.page-content{
+  @include maxMob{
+    background: url('../images/background/mobBG.png') 0% 0% no-repeat;
+  };
+  @include btSm{
+    background: url('../images/background/smBG.png') 0% 0% no-repeat;
+  };
+  @include btMd{
+    background: url('../images/background/mdBG.png') 0% 0% no-repeat;
+  };
+  @include btLg{
+    background: url('../images/background/lgBG.png') 0% 0% no-repeat;
+  };
+  @include minXl{
+    background: url('../images/background/xlBG.png') 0% 0% no-repeat;
+  };
+  background-size: 100% !important;
+}*/
+/* ---------------------------------- End Framework---------------------------*/
