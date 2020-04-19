@@ -9,6 +9,11 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 const debApp = debug('app');
+const nav = [{ name: 'books', link: '/books' },
+  { name: 'authors', link: '/authors' },
+  { name: 'branchs', link: '/branchs' },
+  { name: 'contact', link: '/contact' }];
+const booksRouter = require('./src/routes/bookRoute')(nav);
 
 // Middlewares
 app.use(morgan('tiny'));
@@ -20,8 +25,16 @@ app.set('view engine', 'ejs');
 
 // Main Route
 app.get('/', (req, res) => {
-  res.render('index', { name: '3aMoOo-oor', title: 'Library', list: ['a', 'b', 'c', 'd'] });
+  res.render('index',
+    {
+      name: '3aMoOo-oor',
+      title: 'Library',
+      list: nav
+    });
 });
+
+// Include Routes
+app.use('/books', booksRouter);
 
 // Running app on PORT
 app.listen(port, () => {

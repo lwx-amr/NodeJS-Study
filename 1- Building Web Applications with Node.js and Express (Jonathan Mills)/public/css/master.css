@@ -71,6 +71,10 @@ p {
   background-color: #fff;
 }
 
+.nav.navbar-nav a {
+  text-transform: capitalize;
+}
+
 /* ---------------------------- End pages -------------------------------*/
 /* ----------------------- Start Template ------------------------------*/
 .navbar-form input, .form-inline input {
